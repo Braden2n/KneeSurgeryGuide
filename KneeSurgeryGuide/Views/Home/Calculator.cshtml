@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Surgery Tutoring Calculator";
+}
+<div class="text-center">
+    <h1>Surgery Tutoring Calculator</h1>
+    <br />
+</div>
+<div>
+    <h3>What my "tutoring" services include:</h3>
+    <br />
+    <ul>
+        <li>Pre-op tutoring</li>
+        <li>Knee Surgery</li>
+        <li>Physical Therapy</li>
+        <li>(optional) VIP Pass to "Surgery Pals" (surgery-cult)</li>
+    </ul>
+    <form id="form">
+        <label for="hours">Hours of Pre-op Tutoring:</label><br />
+        <input type="number" id="hours" name="hours" oninput="validateHours()" required /><br />
+        <p id="hours_err"></p>
+
+        <label for="rate">Hourly Tutoring Rate:</label><br />
+        <input type="number" id="rate" name="rate" value="50" readonly /><br /><br />
+
+        <label for="knees">Number of Knees to Operate on:</label><br />
+        <input type="number" id="knees" name="knees" oninput="validateKnees()" required /><br />
+        <p id="knees_err"></p>
+
+        <label for="bills">Medical Bills (Surgery, PT, etc.):</label><br />
+        <input type="number" id="bills" name="bills" value="25000" readonly /><br /><br />
+
+        <label for="cult">Join the Cult?:</label><br />
+        <input type="checkbox" id="cult" name="cult" value="true" checked /><br /><br />
+
+        <button type="submit" id="calculate" name="calculate" onclick="calculatePrice()">Calculate Price</button><br /><br />
+    </form>
+    <h3 id="output" name="output"></h3>
+</div>
